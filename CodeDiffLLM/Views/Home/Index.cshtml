@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Code Diff Tool";
+}
+
+<h2 class="mb-3">LLM Code-Diff Prompt Builder</h2>
+
+<form asp-action="Index" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="OriginalCode" class="form-label fw-bold">Original Code</label>
+        <textarea id="OriginalCode" name="OriginalCode"
+                  class="form-control font-monospace"
+                  rows="20" readonly>
+using System;
+
+namespace HelloWorld
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Hello world!");
+        }
+    }
+}
+        </textarea>
+    </div>
+
+    <div class="col-md-6">
+        <label for="ModifiedCode" class="form-label fw-bold">Modified Code</label>
+        <textarea id="ModifiedCode" name="ModifiedCode"
+                  class="form-control font-monospace"
+                  rows="20">
+using System;
+
+namespace HelloWorld
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            Console.WriteLine("Hello Word!"); // corrected typo
+        }
+    }
+}
+        </textarea>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-success px-4 mt-3">Generate Diff</button>
+    </div>
+</form>
