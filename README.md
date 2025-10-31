@@ -30,7 +30,7 @@ I wanted the format to look like something a **senior developer** or a **code re
 
 ## 🧩 Prompt Structure
 
-The generated prompt follows a consistent layout designed to help large language models reason about the changes clearly:
+The generated prompt follows a strict layout designed to help large language models return consistent responses:
 1. Assign a role
 2. Provide Context
 3. Give data (the generated diff)
