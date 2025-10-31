@@ -14,19 +14,3 @@
         <pre class="font-monospace bg-light p-3 rounded" style="white-space: pre-wrap;">@Model</pre>
     </div>
 </div>
-
-<div class="mt-3">
-    <button id="copyBtn" class="btn btn-primary">Copy to Clipboard</button>
-    <a asp-action="Index" class="btn btn-secondary ms-2">Back</a>
-</div>
-
-@section Scripts {
-    <script>
-        document.getElementById('copyBtn').addEventListener('click', function () {
-            const text = document.querySelector('pre').innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Prompt copied to clipboard!');
-            });
-        });
-    </script>
-}

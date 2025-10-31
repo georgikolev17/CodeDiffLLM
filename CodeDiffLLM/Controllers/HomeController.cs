@@ -24,7 +24,7 @@ namespace CodeDiffLLM.Controllers
         [HttpPost]
         public IActionResult Index(string originalCode, string modifiedCode)
         {
-            var diffLines = this.codeService.GetCodeDiffLines(originalCode, modifiedCode);
+            var diffLines = this.codeService.GetCodeDiffLines(originalCode ?? string.Empty, modifiedCode ?? string.Empty);
             
             string prompt = this.codeService.BuildPrompt(diffLines);
 
